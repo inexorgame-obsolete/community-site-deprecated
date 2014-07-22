@@ -1,1 +1,0 @@
-<?=generate_docs('Fuel_blog', 'libraries', 'blog'); ?>
