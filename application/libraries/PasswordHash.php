@@ -24,6 +24,7 @@
 # Obviously, since this code is in the public domain, the above are not
 # requirements (there can be none), but merely suggestions.
 #
+
 class PasswordHash {
 	var $itoa64;
 	var $iteration_count_log2;
@@ -250,4 +251,44 @@ class PasswordHash {
 	}
 }
 
+class Helper
+{
+	/**
+	 * Generates a random password using PHPass inbuilt random function
+	 * Use with caution .. this only works on nix* systems?
+	 * 
+	 * TODO: Integrate https://github.com/ircmaxell/RandomLib with Composer
+	 * @param integer $length
+	 * @return string
+	 */
+	public function genRandomPassword($length = 8)
+	{
+		return PasswordHash::get_random_bytes($length);
+	}
+	
+	/**
+	 * Creates a password hash using PHPass hashing algorithm
+	 * 
+	 * @param string $password
+	 * @return string
+	 */
+	public function hashPassword($password)
+	{
+		$t_hasher = new PasswordHash(8, FALSE);
+		return $t_hasher->HashPassword($password);
+	}
+	
+	/**
+	 * Checks a password against a hash using PHPass hashing algorithm
+	 * 
+	 * @param string $password
+	 * @param string $hash
+	 * @return boolean
+	 */
+	public function verifyPassword($password, $hash)
+	{
+		$t_hasher = new PasswordHash(8, FALSE);
+		return $t_hasher->CheckPassword($password, $hash);
+	}
+}
 ?>
