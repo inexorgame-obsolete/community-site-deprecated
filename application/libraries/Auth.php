@@ -34,11 +34,11 @@ class User_Status extends SplEnum
 	/**
 	 * Define a set of standard authentication types
 	 */
-	const __default = self::offline;
+	const __default = self::OFFLINE;
 	
-	const authenticated = 2;
-	const failure = 1;
-	const offline = 0; // This could as well be none
+	const AUTHENTICATED = 2;
+	const FAILURE = 1;
+	const OFFLINE = 0; // This could as well be none
 }
 
 class User_Activation extends SplEnum
@@ -46,11 +46,11 @@ class User_Activation extends SplEnum
 	/**
 	 * Define standard activation levels
 	 */
-	const __default = self::pending;
+	const __default = self::PENDING;
 	
-	const activated = 2;
-	const pending = 1;
-	const suspended = 0;
+	const ACTIVATED = 2;
+	const PENDING = 1;
+	const SUSPENDED = 0;
 }
 
 class Auth
@@ -90,8 +90,8 @@ class Auth
 			$user->email = "";
 			$user->password = "";
 			$user->groups = array();
-			$user->status = User_Status::offline;
-			$user->activation = User_Activation::pending;
+			$user->status = User_Status::OFFLINE;
+			$user->activation = User_Activation::PENDING;
 		}
 	
 		return $user;
@@ -154,7 +154,7 @@ class Auth
 		{
 			$this->db
 			->where("user_id", $id)
-			->update("users", array("status" => User_Status::authenticated));
+			->update("users", array("status" => User_Status::AUTHENTICATED));
 			
 			return true;
 		}
@@ -226,7 +226,7 @@ class Auth
 		if (is_array($gid)) {
 			$batch = array();
 			
-			array_walk($gid, function(&$value) use($id ,$batch){
+			array_walk($gid, function(&$value) use(&$id ,&$batch){
 				array_push($batch, array("user_id" => $id, "group_id" => $value));
 			});
 			
