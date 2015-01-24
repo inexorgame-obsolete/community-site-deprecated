@@ -10,5 +10,5 @@
 function script_tag($script)
 {
 	$CI =& get_instance();	
-	return '<script type="text/javascript">' . $CI->config->slash_item('base_url') . $script . "</script>";
+	return '<script type="text/javascript" src="' . $CI->config->slash_item('base_url') . $script . '"></script>';
 }

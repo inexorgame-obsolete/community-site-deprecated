@@ -9,9 +9,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<?php
-		echo link_tag("data/css/styles.css");
-		echo link_tag("data/css/normalize.css");
-		echo link_tag("data/css/font_awesome/css/font-awesome.min.css"); 
+		echo link_tag("data/css/styles.css") . PHP_EOL;
+		echo link_tag("data/css/normalize.css") . PHP_EOL;
+		echo link_tag("data/css/font-awesome/css/font-awesome.min.css") . PHP_EOL; 
 	?>
 	
 	<!--[if lt IE 9]>
