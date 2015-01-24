@@ -15,8 +15,7 @@
 	?>
 	
 	<!--[if lt IE 9]>
-
-	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<?php echo script_tag("data/js/html5shiv.js"); ?>
 	<![endif]-->
 </head>
 <body>
