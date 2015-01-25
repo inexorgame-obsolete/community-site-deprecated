@@ -36,6 +36,19 @@ define('FOPEN_READ_WRITE_CREATE',				'a+b');
 define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
+/*
+ * Auth Module constants
+ */
+
+// Authentication status
+define('AUTHENTICATED', 2);
+define('FAILURE', 1);
+define('OFFLINE', 0);
+
+// Activation status
+define('ACTIVATED', 2);
+define('PENDING', 1);
+define('SUSPENDED', 0);
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

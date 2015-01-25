@@ -29,30 +29,6 @@
  * THE SOFTWARE.
  */
 
-class User_Status extends SplEnum
-{
-	/**
-	 * Define a set of standard authentication types
-	 */
-	const __default = self::OFFLINE;
-	
-	const AUTHENTICATED = 2;
-	const FAILURE = 1;
-	const OFFLINE = 0; // This could as well be none
-}
-
-class User_Activation extends SplEnum
-{
-	/**
-	 * Define standard activation levels
-	 */
-	const __default = self::PENDING;
-	
-	const ACTIVATED = 2;
-	const PENDING = 1;
-	const SUSPENDED = 0;
-}
-
 class Auth
 {
 	public function __construct()
@@ -90,8 +66,8 @@ class Auth
 			$user->email = "";
 			$user->password = "";
 			$user->groups = array();
-			$user->status = User_Status::OFFLINE;
-			$user->activation = User_Activation::PENDING;
+			$user->status = OFFLINE;
+			$user->activation = PENDING;
 		}
 	
 		return $user;
@@ -119,7 +95,7 @@ class Auth
 			// Update the user's status
 			$this->db
 			->where("user_id", $activation->user_id)
-			->update("users", array("activation" => User_Activation::activated));
+			->update("users", array("activation" => ACTIVATED));
 			
 			// Delete the token
 			$this->db
@@ -154,7 +130,7 @@ class Auth
 		{
 			$this->db
 			->where("user_id", $id)
-			->update("users", array("status" => User_Status::AUTHENTICATED));
+			->update("users", array("status" => AUTHENTICATED));
 			
 			return true;
 		}
