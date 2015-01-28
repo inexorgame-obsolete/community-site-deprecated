@@ -1,22 +1,15 @@
-<?php
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 // Standard stuff
-$site['title'] = "Community Site";
+$config['title'] = "Community Site";
 
 // Meta configurations
-$site['description'] = "Community fork of the Cube 2: Sauerbraten game.";
-$site['keywords'] = array("Inexor", "Cube 2", "Sauerbraten", "FPS");
+$config['description'] = "Community fork of the Cube 2: Sauerbraten game.";
+$config['keywords'] = array("Inexor", "Cube 2", "Sauerbraten", "FPS");
 
 // Robot settings
-$site['revisit'] = "After 1 week";
-$site['robot'] = "INDEX, FOLLOW";
+$config['revisit'] = "After 1 week";
+$config['robot'] = "INDEX, FOLLOW";
 
 // Menu settings
-/*$menu = array(
-		
-);
 
-$footer = array(
-
-)
-*/
 ?>

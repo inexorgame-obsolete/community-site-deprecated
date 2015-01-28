@@ -22,7 +22,7 @@ class MY_Controller extends CI_Controller
 		parent::__construct(); // Load the original controller
 		
 		//Load additional resources
-		$this->load->library(array('session', 'language'));
+		$this->load->library(array('session', 'lang'));
 		$this->config->load('site');
 		
 		/*
