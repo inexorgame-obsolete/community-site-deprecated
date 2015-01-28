@@ -21,10 +21,10 @@
 <body>
 	<div class="header-container">
     	<header class="wrapper clearfix">
-        	<h1 class="title"><?php echo $menu['title']?></h1>
+        	<h1 class="title"><?php echo $menu->title?></h1>
             <nav>
            		<?php
-           			echo ul($menu['items'], false); 
+           			echo ul($menu->items, false); 
            		?>
 			</nav>
         </header>

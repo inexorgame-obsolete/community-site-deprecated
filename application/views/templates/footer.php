@@ -3,7 +3,7 @@
 	
 	<div class="footer-container">
     	<footer class="wrapper">
-			<!-- Currently no content -->
+    		<?php echo ul($data);?>
     	</footer>
 	</div>
 
