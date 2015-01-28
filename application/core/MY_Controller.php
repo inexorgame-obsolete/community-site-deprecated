@@ -106,7 +106,7 @@ class MY_Controller extends CI_Controller
 		$this->load->view("templates/header", $headerData);
 		//$this->load->view("templates/sidebar");
 		$this->load->view($view, $data);
-		$this->load->view("templates/footer", menu_links($this->footer));
+		$this->load->view("templates/footer", array("footer_items" => menu_links($this->footer)));
 	}
 	
 }

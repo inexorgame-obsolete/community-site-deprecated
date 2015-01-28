@@ -3,7 +3,7 @@
 	
 	<div class="footer-container">
     	<footer class="wrapper">
-    		<?php echo ul($data);?>
+    		<?php echo ul($footer_items);?>
     	</footer>
 	</div>
 
