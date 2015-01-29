@@ -72,10 +72,11 @@ class MY_Controller extends CI_Controller
 		// This is a tiny hack to offer acces via $object->footer->item but initialize using the PHP array syntax :P
 		// When loading from the config (TODO) this should be converted (if an array) or mapped (if an object)
 		$this->menu->items = (object)array(
-			"Blog" => "https://inexor.org",
-			"Organisation" => array(
-				"Code" => "https://github.com/inexor-game/code",
-				"Wiki" => "https://github.com/inexor-game/code/wiki"
+			"heading" => "",
+			"blog" => "/",
+			"organisation" => array(
+				"code" => "https://github.com/inexor-game/code/",
+				"wiki" => "https://github.com/inexor-game/code/wiki"
 			)
 		);
 		
@@ -98,7 +99,7 @@ class MY_Controller extends CI_Controller
 			"meta" => array(),
 			"menu" => array(
 				"title" => $this->menu->title,
-				"items" => menu_links($this->menu)
+				"items" => menu_links((array)$this->menu->items)
 			)	
 		);
 		

@@ -24,7 +24,7 @@
         	<h1 class="title"><?php echo $menu['title']?></h1>
             <nav>
            		<?php
-           			echo ul($menu['items'], false); 
+           			echo ul($menu['items'], array("class" => "nav")); 
            		?>
 			</nav>
         </header>

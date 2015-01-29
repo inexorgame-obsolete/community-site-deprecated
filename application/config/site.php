@@ -8,7 +8,7 @@ $config['keywords'] = array("Inexor", "Cube 2", "Sauerbraten", "FPS");
 
 // Robot settings
 $config['revisit'] = "After 1 week";
-$config['robot'] = "INDEX, FOLLOW";
+$config['robots'] = "INDEX, FOLLOW";
 
 // Menu settings
 
