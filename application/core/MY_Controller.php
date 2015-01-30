@@ -27,9 +27,9 @@ class MY_Controller extends CI_Controller
 		
 		/*
 		 * Retrieve the currently set user language from the session
-		 * If none is set we use "english" as a default value
+		 * If none is set we use "en" as a default value
 		 */		
-		$this->language = (!empty($this->session->userdata("language"))) ? $this->session->userdata("language") : "english";
+		$this->language = (!empty($this->session->userdata("language"))) ? get_iso_tag(lcfirst($this->session->userdata("language"))) : "en";
 		
 		// Loads the title
 		$this->title = $this->config->item('title');
