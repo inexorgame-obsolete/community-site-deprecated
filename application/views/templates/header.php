@@ -11,11 +11,12 @@
 	<?php
 		echo link_tag("asset/css/styles.css") . PHP_EOL;
 		echo link_tag("asset/css/normalize.css") . PHP_EOL;
-		echo link_tag("asset/css/font-awesome/css/font-awesome.min.css") . PHP_EOL; 
+		echo link_tag("asset/css/bootstrap.min.css") . PHP_EOL;
+		echo link_tag("asset/css/font-awesome/css/font-awesome.min.css") . PHP_EOL;
 	?>
 	
 	<!--[if lt IE 9]>
-		<?php echo script_tag("data/js/html5shiv.js"); ?>
+		<?php echo script_tag("asset/js/html5shiv.js"); ?>
 	<![endif]-->
 </head>
 <body>
