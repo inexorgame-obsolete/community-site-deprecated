@@ -29,29 +29,26 @@ function menu_links($items)
 
 	// Use clojures for recursion!
 	// This function can recursively call itself :)
-	$item = function($items) use (&$item)
-	{
-		$menu_entries = array();
 
-		array_walk($items, function(&$value, &$key) use(&$item, &$menu_entries){
-			if (is_string($key) && empty($value)) {
-				// Heading
-				array_push($menu_entries, '<h3>'.$key.'</h3>');
+	
+	$menuEntries = array();
+	
+	array_walk($items, function(&$value, &$key) use(&$menuEntries){
+		if (is_string($key) && empty($value)) {
+			// Heading
+			array_push($menu_entries, '<h3>'.$key.'</h3>');
+	
+		} else if (is_string($key) && is_string($value)) {
+			// Simple link
+			array_push($menuEntries, '<a href="'.$value.'">'.$key.'</a>');
+	
+		} else if (is_string($key) && is_array($value)) {
+			// Nested entry with heading
+			$nestedEntry = '<h3>'.$key.'</h3>' . ul(menu_links($value));
+			array_push($menuEntries, $nestedEntry);
+				
+		}
+	});
 
-			} else if (is_string($key) && is_string($value)) {
-				// Simple link
-				array_push($menu_entries, '<a href="'.$value.'">'.$key.'</a>');
-
-			} else if (is_string($key) && is_array($value)) {
-				// Nested entry with heading
-				$nestedEntry = '<h3>'.$key.'</h3>' . ul($item($value));
-				array_push($menu_entries, $nestedEntry);
-					
-			}
-		});
-
-			return $menu_entries;
-	};
-
-	return $item($items);
+	return $menuEntries;
 }
