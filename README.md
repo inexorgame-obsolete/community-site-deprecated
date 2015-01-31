@@ -1,4 +1,4 @@
-# community-site
+# Community site
 Inexor's community site built upon [CodeIgniter 2x](http://www.codeigniter.com/user_guide/) series.
 
 ## Features planned
@@ -55,7 +55,7 @@ Please make sure to use a table prefix because some parts of the code specifical
 ##Development
 If you'd like to start over and develop a few lines of code, you should be aware of a few things:
 - jQuery, Bootstrap with Normalize (responsive), TinyMCE, Fontawesome are already there. Dont' use any more depencies if not **really** needed.
-- There is no *"real"* multilingual-functioning at the moment, all you have is a customized version of the (language helper)[http://www.codeigniter.com/user_guide/helpers/language_helper.html].
+- There is no *"real"* multilingual-functioning at the moment, all you have is a customized version of the [language helper](http://www.codeigniter.com/user_guide/helpers/language_helper.html).
 
 When starting with your own controller you can extend MY_Controller, which offers ``` $this->display($view, $data)```
 Mentioned method will render the full page, including header, footer and resources for you, so that work is already done.
