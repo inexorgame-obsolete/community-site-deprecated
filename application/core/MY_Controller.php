@@ -74,10 +74,8 @@ class MY_Controller extends CI_Controller
 		$this->menu->items = (object)array(
 			"heading" => "",
 			"blog" => "/",
-			"organisation" => array(
-				"code" => "https://github.com/inexor-game/code/",
-				"wiki" => "https://github.com/inexor-game/code/wiki"
-			)
+			"code" => "https://github.com/inexor-game/code/",
+			"wiki" => "https://github.com/inexor-game/code/wiki"
 		);
 		
 		$this->footer = (object)array(

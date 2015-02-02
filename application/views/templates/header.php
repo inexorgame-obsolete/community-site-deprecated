@@ -20,16 +20,26 @@
 	<![endif]-->
 </head>
 <body>
-	<div class="header-container">
+	<!-- <div class="header-container">
     	<header class="wrapper clearfix">
-        	<h1 class="title"><?php echo $menu['title']?></h1>
-            <nav>
-           		<?php
-           			echo ul($menu['items'], array("class" => "nav")); 
-           		?>
+        	<h1 class="title"></h1>
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+             <div class="collapse navbar-collapse">
+           	 </div>
 			</nav>
         </header>
-	</div> <!-- #header -->
+        
+	</div>--> <!-- #header -->
 
-	<div class="main-container">
-		<div class="main wrapper clearfix">
+	<div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+             <?php
+           		$title = '<li class="sidebar-brand">'.$menu['title'].'</li>';
+           		$nav = ul($menu['items'], array("class" => "sidebar-nav"));
+           		echo substr_replace($nav, $title, 24, 0);
+           	?>
+        </div>
+        
+	<div id="page-content-wrapper">
+		<div id="container-fluid">
