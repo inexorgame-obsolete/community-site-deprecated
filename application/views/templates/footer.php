@@ -1,8 +1,10 @@
-		<footer>
-    		<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
-    		<p>Page rendered in <strong>{elapsed_time}</strong> seconds</p>
+		<footer class="footer">
+			<div class="container-fluid">
+				<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+				<p class="text-muted">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
+     		</div>
     	</footer>
-		
+    	
 		</div> <!-- #main -->
     </div> <!-- #main-container -->
 	

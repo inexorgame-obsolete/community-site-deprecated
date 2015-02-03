@@ -13,8 +13,12 @@ function script_tag($script)
 	return '<script type="text/javascript" src="' . $CI->config->slash_item('base_url') . $script . '"></script>';
 }
 
-/*
+/**
+ * menu_links
+ * Generates an array of <a> items
  * 
+ * @param array items
+ * @return array
  */
 function menu_links($items)
 {
@@ -51,4 +55,20 @@ function menu_links($items)
 	});
 
 	return $menuEntries;
+}
+
+/**
+ * 
+ */
+	
+function gravatar($email)
+{
+	$CI =& get_instance();
+	$CI->load->helper('security');
+	
+	// sanitize the input, remove all whitespaces & make the email strtolower
+	$email = strtolower(trim(xss_clean($email, FALSE)));
+	$hash = do_hash($email, 'md5');
+	
+	return '<img src="https://wwww.gravatar.com/avatar/'.$hash.'"?d=mm">';
 }
