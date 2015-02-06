@@ -40,7 +40,7 @@ function menu_links($items)
 	array_walk($items, function(&$value, &$key) use(&$menuEntries){
 		if (is_string($key) && empty($value)) {
 			// Heading
-			array_push($menu_entries, '<h3>'.$key.'</h3>');
+			array_push($menuEntries, '<h3>'.$key.'</h3>');
 	
 		} else if (is_string($key) && is_string($value)) {
 			// Simple link
@@ -58,7 +58,9 @@ function menu_links($items)
 }
 
 /**
+ * gravatar - creates a gravatar <img> tag with the given image
  * 
+ * @param $email
  */
 	
 function gravatar($email)
