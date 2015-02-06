@@ -113,32 +113,6 @@ class RSS {
 				
 		}	
 	}
-	
-	
-	function Links($url, $size = 15)
-	{
-		//global $RSS_Content;
-	
-		$page = "<ul>";
-	
-		$this->Content = $this->RetrieveLinks($url);
-		if($size > 0)
-			$recents = array_slice($this->Content, 0, $size + 1);
-	
-		foreach($recents as $article)
-		{
-			$type = $article["type"];
-			if($type == 0) continue;
-			$title = $article["title"];
-			$link = $article["link"];
-			$page .= "<li><a href=\"$link\">$title</a></li>\n";
-		}
-	
-		$page .="</ul>\n";
-	
-		return $page;
-	
-	}
 }
 
 ?>
