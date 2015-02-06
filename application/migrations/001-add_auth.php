@@ -67,7 +67,6 @@ class Migration_Add_auth extends CI_Migration
 		));
 		
 		$this->dbforge->create_table('recover');
-		$this->db->simple_query('ALTER TABLE `'.$this->db->dbprefix.'_recover` ADD UNIQUE (`user_id`)');
 		$this->dbforge->_reset();
 		
 		// Table activation
@@ -84,8 +83,6 @@ class Migration_Add_auth extends CI_Migration
 		));
 		
 		$this->dbforge->create_table('activation');
-		$this->db->simple_query('ALTER TABLE `'.$this->db->dbprefix.'_activation` ADD UNIQUE (`user_id`)');
-		$this->dbforge->_reset();
 		
 		//$this->db->simple_query('ALTER TABLE `'.$this->db->dbprefix.'_activation` ADD UNIQUE (`user_id`)');
 		// This is (more or less) a trivial hack because DBForge doesn't natively support unique keys
