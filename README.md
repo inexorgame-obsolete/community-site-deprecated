@@ -64,3 +64,10 @@ During runtime you can modify the view properties like:
 $this->title = "Some new title";
 $this->meta->author = "Fohlen";
 ```
+
+##Running stuff from the command-line
+There are various command-line tools (updating feeds, extinfo ...) which can be called using the cron controller
+```bash
+#For feeds use
+php index.php cron feeds
+```
