@@ -25,6 +25,7 @@ class Migration_Add_feeds extends CI_Migration
 				),
 		));
 		
+		$this->dbforge->add_key('id', TRUE);
 		$this->dbforge->create_table('feeds');
 		$this->dbforge->_reset();
 		
@@ -32,7 +33,7 @@ class Migration_Add_feeds extends CI_Migration
 			'id' => array(
 					'type' => 'INT',
 					'null' => FALSE,
-					'auto_increment' => TRU
+					'auto_increment' => TRUE
 			),
 			'feed_id' => array(
 					'type' => 'INT',
@@ -54,6 +55,7 @@ class Migration_Add_feeds extends CI_Migration
 			)
 		));
 		
+		$this->dbforge->add_key('id', TRUE);
 		$this->dbforge->create_table('feed_items');
 	}
 	

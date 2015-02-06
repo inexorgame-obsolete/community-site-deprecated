@@ -37,8 +37,8 @@ class Migration_Add_sessions extends CI_Migration
 		));
 		
 		$this->dbforge->add_key('session_id', TRUE);
-		$this->dbforge->add_key('last_activity_idx', 'last_activity');
 		$this->dbforge->create_table('sessions');
+		$this->db->query('ALTER TABLE `'.$this->db->dbprefix.'sessions` ADD KEY `last_activity_idx` (`last_activity`)');
 	}
 	
 	public function down()

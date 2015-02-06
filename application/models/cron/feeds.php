@@ -29,6 +29,7 @@ class Feeds extends CI_Model
 	public function addItem($id, $Item)
 	{
 		$data = array(
+				'feed_id' => $id,
 				'title' => $Item['title'],
 				'link' => $Item['link'],
 				'date' => $Item['date'],

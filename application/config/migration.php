@@ -21,7 +21,7 @@ $config['migration_enabled'] = FALSE; // This should be enabled on initialisatio
 | be upgraded / downgraded to.
 |
 */
-$config['migration_version'] = 1;
+$config['migration_version'] = 2;
 
 
 /*

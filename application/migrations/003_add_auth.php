@@ -34,7 +34,7 @@ class Migration_Add_auth extends CI_Migration
 				'status' => array(
 						'type' => 'INT',
 						'null' => TRUE,
-						'default' => NULL
+						'default' => '0'
 				),
 				'activation' => array(
 						'type' => 'INT',
