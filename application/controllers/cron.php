@@ -18,6 +18,7 @@ class Cron extends CI_Controller
 	public function feeds()
 	{
 		$this->load->library('RSS');
+		$this->load->helper('security');
 		$this->load->model('cron/feeds');
 		
 		foreach ($this->feeds->getFeedList() as $feed)
@@ -30,10 +31,17 @@ class Cron extends CI_Controller
 			
 			foreach (new LimitIterator($Content, 1) as $Item)
 			{
-				if ($Item["date"] > $this->feeds->getLatestItemDate($feed->id))
+				if (validDate($Item["date"]))
 				{
-					$desc = substr($Item["description"], 0, strrpos($title, ' ', 100) ); // Save only 100 words!
-					$this->feeds->addItem($feed->id, array("title" => $Item["title"], "link" => $Item['link'], "date" => $Item["date"], "description" => $desc));
+					if ($Item["date"] > $this->feeds->getLatestItemDate($feed->id))
+					{
+						$Item["title"] = xss_clean($Item["title"]);
+						$Item["link"] = xss_clean($Item["link"]); // This is not 100% necessarily
+						$Item["description"] = xss_clean($Item["description"]);
+							
+						$desc = substr($Item["description"], 0, strrpos($title, ' ', 100) ); // Save only 100 words!
+						$this->feeds->addItem($feed->id, array("title" => $Item["title"], "link" => $Item['link'], "date" => $Item["date"], "description" => $desc));
+					}
 				}
 			}
 		}

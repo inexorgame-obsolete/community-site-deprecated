@@ -49,7 +49,7 @@ class Migration_Add_feeds extends CI_Migration
 			),
 			'description' => array(
 					'type' => 'VARCHAR',
-					'constraint' => '100',
+					'constraint' => '255',
 					'null' => FALSE
 			)
 		));
