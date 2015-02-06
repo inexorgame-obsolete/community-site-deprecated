@@ -1,7 +1,7 @@
 <?php
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class MigrationAddSessions extends CI_Migration 
+class Migration_Add_sessions extends CI_Migration 
 {	
 	public function up()
 	{
