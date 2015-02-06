@@ -1,32 +1,27 @@
 <?php
-class Feeds_model extends CI_Model
+class Feeds extends CI_Model
 {
 	public function __construct()
 	{
-		$this->load->library('database');
+		$this->load->database();
 	}
 	
-	public function getFeedUrls()
+	public function getFeedList()
 	{
 		
 	}
 		
-	public function getLatestArticle()
+	public function getLatestItemDate($id)
 	{
 		
 	}
 	
-	public function lastModified()
+	public function addItem($id, $Item)
 	{
 		
 	}
 	
-	public function addFeed()
-	{
-		
-	}
-	
-	public function addArticle()
+	public function updateItem($id, $Item)
 	{
 		
 	}
