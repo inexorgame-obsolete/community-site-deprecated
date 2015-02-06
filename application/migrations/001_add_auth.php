@@ -3,8 +3,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Migration_Add_auth extends CI_Migration
 {	
-	public function up()
-	{
+	public function up() {
 		// Table users
 		$this->dbforge->add_field(array(
 				'id' => array(
@@ -66,6 +65,7 @@ class Migration_Add_auth extends CI_Migration
 			),
 		));
 		
+		$this->dbforge->add_key('user_id', TRUE);
 		$this->dbforge->create_table('recover');
 		$this->dbforge->_reset();
 		
@@ -81,7 +81,8 @@ class Migration_Add_auth extends CI_Migration
 						'null' => FALSE
 				),
 		));
-		
+
+		$this->dbforge->add_key('user_id', TRUE);
 		$this->dbforge->create_table('activation');
 		
 		//$this->db->simple_query('ALTER TABLE `'.$this->db->dbprefix.'_activation` ADD UNIQUE (`user_id`)');
@@ -95,3 +96,5 @@ class Migration_Add_auth extends CI_Migration
 		$this->dbforge->drop_table('activation');
 	}
 }
+
+?>
