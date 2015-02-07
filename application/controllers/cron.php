@@ -26,22 +26,30 @@ class Cron extends CI_Controller
 			// Initialize the content
 			$this->rss->Retrieve($feed->url);
 			
-			// We use LimitIterator to skip the description!
-			$Content = new ArrayIterator($this->rss->Content);
+			// Skip the introduction and remove the trailing entry (if empty)
+			$Content = array_slice($this->rss->Content,0,count($this->rss->Content)-1); // array_pop does return NULL for some strange reasons..
+			$Content = array_slice($Content, 1);
+			$Content = array_reverse($Content);
 			
-			foreach (new LimitIterator($Content, 1) as $Item)
-			{
-				if (validDate($Item["date"]))
+			foreach ($Content as $Item)
+			{				
+				$gmtTimezone = new DateTimeZone('GMT');
+				$ItemDate = new DateTime($Item["date"], $gmtTimezone);
+				$LatestFeedDate = new DateTime($this->feeds->getLatestFeedDate($feed->id), $gmtTimezone);
+
+				if ($LatestFeedDate == date_create())
 				{
-					if ($Item["date"] > $this->feeds->getLatestItemDate($feed->id))
-					{
-						$Item["title"] = xss_clean($Item["title"]);
-						$Item["link"] = xss_clean($Item["link"]); // This is not 100% necessarily
-						$Item["description"] = xss_clean($Item["description"]);
-							
-						$desc = substr($Item["description"], 0, strrpos($title, ' ', 100) ); // Save only 100 words!
-						$this->feeds->addItem($feed->id, array("title" => $Item["title"], "link" => $Item['link'], "date" => $Item["date"], "description" => $desc));
-					}
+					$Item["title"] = xss_clean($Item["title"]);
+					//$Item["link"] = xss_clean($Item["link"]); // This is not 100% necessarily
+					$Item["description"] = xss_clean($Item["description"]);
+					$desc = substr($Item["description"], 0, strrpos($Item['description'], ' ', 100) ); // Save only 100 words!
+					$this->feeds->addItem($feed->id, array("title" => $Item["title"], "link" => $Item['link'], "date" => $ItemDate->format("Y-m-d H:i:s"), "description" => $desc));
+				} else if ($ItemDate->getTimestamp() > $LatestFeedDate->getTimestamp()) {
+					$Item["title"] = xss_clean($Item["title"]);
+					//$Item["link"] = xss_clean($Item["link"]); // This is not 100% necessarily
+					$Item["description"] = xss_clean($Item["description"]);						
+					$desc = substr($Item["description"], 0, strrpos($Item['description'], ' ', 100) ); // Save only 100 words!						
+					$this->feeds->addItem($feed->id, array("title" => $Item["title"], "link" => $Item['link'], "date" => $ItemDate->format("Y-m-d H:i:s"), "description" => $desc));		
 				}
 			}
 		}

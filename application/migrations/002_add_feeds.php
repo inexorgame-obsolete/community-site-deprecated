@@ -44,6 +44,10 @@ class Migration_Add_feeds extends CI_Migration
 					'constraint' => '255',
 					'null' => FALSE
 			),
+			'date' => array(
+					'type' => 'DATETIME',
+					'null' => FALSE
+			),
 			'link' => array(
 					'type' => 'TEXT',
 					'null' => FALSE
