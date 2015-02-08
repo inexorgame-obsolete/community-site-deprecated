@@ -43,7 +43,7 @@ class Cron extends CI_Controller
 			foreach ($Content as $Item)
 			{				
 				$gmtTimezone = new DateTimeZone('GMT');
-				$ItemDate = new DateTime($Item["date"], $gmtTimezone);
+				$ItemDate = new DateTime($Item["pubDate"], $gmtTimezone);
 				$LatestFeedDate = new DateTime($this->feeds->getLatestFeedDate($feed->id), $gmtTimezone);
 				
 				if (!$this->feeds->getLatestFeedDate($feed->id) || $ItemDate->getTimestamp() > $LatestFeedDate->getTimestamp())
@@ -52,7 +52,13 @@ class Cron extends CI_Controller
 					//$Item["link"] = xss_clean($Item["link"]); // This is not 100% necessarily
 					$Item["description"] = xss_clean($Item["description"]);
 					$desc = substr($Item["description"], 0, strrpos($Item['description'], ' ', 100) ); // Save only 100 words!
-					$this->feeds->addItem($feed->id, array("title" => $Item["title"], "link" => $Item['link'], "date" => $ItemDate->format("Y-m-d H:i:s"), "description" => $desc));
+					$this->feeds->addItem($feed->id, array("title" => $Item["title"], "link" => $Item['link'], "pubDate" => $ItemDate->format("Y-m-d H:i:s"), "description" => $desc));
+				} else if ($this->feeds->getItem($feed->id, $Item["link"]) !== FALSE && !empty($Item["lastBuiltDate"])) {
+					$lastBuiltDate = new DateTime($Item["lastBuiltDate"], $gmtTimezone);
+						
+					if($lastBuiltDate->getTimestamp() > $ItemDate->getTimestamp()) {
+							$this->feeds->updateItem($this->feeds->getItem($feed->id, $Item["link"]), $lastBuiltDate->format("Y-m-d H:i:s"));
+					}
 				}
 			}
 		}

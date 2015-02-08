@@ -32,27 +32,48 @@ class RSS {
 	function Tags($item, $type)
 	{
 		$y = array();
+	
 		$tnl = $item->getElementsByTagName("title");
-		$tnl = $tnl->item(0);
-		$title = $tnl->firstChild->textContent;
+		if ($tnl->length == 1)
+		{
+			$tnl = $tnl->item(0);
+			$title = $tnl->firstChild->textContent;
+		}
 	
 		$tnl = $item->getElementsByTagName("link");
-		$tnl = $tnl->item(0);
-		$link = $tnl->firstChild->textContent;
+		if ($tnl->length == 1)
+		{
+			$tnl = $tnl->item(0);
+			$link = $tnl->firstChild->textContent;
+		}
 	
 		$tnl = $item->getElementsByTagName("pubDate");
-		$tnl = $tnl->item(0);
-		$date = $tnl->firstChild->textContent;
-	
+		if ($tnl->length == 1)
+		{
+			$tnl = $tnl->item(0);
+			$pubDate = $tnl->firstChild->textContent;
+		}
+			
+		$tnl = $item->getElementsByTagName("lastBuiltDate");
+		if ($tnl->length == 1)
+		{
+			$tnl = $tnl->item(0);
+			$lastBuiltDate = $tnl->firstChild->textContent;
+		}
+			
 		$tnl = $item->getElementsByTagName("description");
-		$tnl = $tnl->item(0);
-		$description = $tnl->firstChild->textContent;
+		if ($tnl->length == 1)
+		{
+			$tnl = $tnl->item(0);
+			$description = $tnl->firstChild->textContent;
+		}
 	
-		$y["title"] = $title;
-		$y["link"] = $link;
-		$y["date"] = $date;
-		$y["description"] = $description;
-		$y["type"] = $type;
+		if (isset($title)) $y["title"] = $title;
+		if (isset($link)) $y["link"] = $link;
+		if (isset($pubDate)) $y["pubDate"] = $pubDate;
+		if (isset($lastBuiltDate)) $y["lastBuiltDate"] = $lastBuiltDate;
+		if (isset($description)) $y["description"] = $description;
+		if (isset($type)) $y["type"] = $type;
 	
 		return $y;
 	}
