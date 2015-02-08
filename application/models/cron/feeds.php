@@ -14,20 +14,20 @@ class Feeds extends CI_Model
 		
 	public function getLatestFeedDate($id)
 	{
-		// Use database caching because this will be called quiet often within the cron-controller
 		$this->db->start_cache();
-		$this->db
-		->select_max('date')
-		->from('feed_items')
-		->where('feed_id', $id);
+		$this->db->select_max('date')->from('feed_items');
 		$this->db->stop_cache();
+		// Make aboive a prepared statement
+		$this->db->where('feed_id', $id);
 		
 		$query = $this->db->get();
 		$row = $query->row();
-		
-		if (is_object($row)) {
+
+		if ($query->num_rows() > 0) {
 			return $row->date;
-		}		
+		} else {
+			return false;
+		}
 	}
 	
 	/* public function getLatestItemDate($id, $link)
