@@ -79,6 +79,7 @@ class RSS {
 	
 	function Retrieve($url)
 	{	
+		$this->Content = array();
 		$doc  = new DOMDocument();
 		$doc->load($url);
 	

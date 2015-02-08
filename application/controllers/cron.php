@@ -25,10 +25,19 @@ class Cron extends CI_Controller
 		{	
 			// Initialize the content
 			$this->rss->Retrieve($feed->url);
-			
-			// Skip the introduction and remove the trailing entry (if empty)
-			$Content = array_slice($this->rss->Content,0,count($this->rss->Content)-1); // array_pop does return NULL for some strange reasons..
-			$Content = array_slice($Content, 1);
+
+			$Content = array_slice($this->rss->Content, 1, 0);
+			$Content = array_filter($this->rss->Content, function(&$value) {
+				if (empty($value)) {
+					// Don't permit empty arrays
+					return false;
+				} /* This could be used to verify timestamps
+				  else if {
+					return (DateTime::createFromFormat(..., $value["date"]) !== FALSE); 
+				}
+				*/
+				return true;
+			});
 			$Content = array_reverse($Content);
 			
 			foreach ($Content as $Item)
