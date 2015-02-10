@@ -1,17 +1,31 @@
 <?php
 class Feeds extends CI_Model
 {
+	// Load the database driver because it is necessary for all operations
 	public function __construct()
 	{
 		$this->load->database();
 	}
 	
+	/**
+	 * getFeedList
+	 * 
+	 * Returns a list of activated feeds (title, url)
+	 * @return mixed
+	 */
 	public function getFeedList()
 	{
 		$query = $this->db->get_where('feeds', array("status" => ACTIVATED));
 		return $query->result();
 	}
 		
+	/**
+	 * getFeedDate
+	 * 
+	 * Returns the date of the last added feed item for feed $id
+	 * @param integer $id
+	 * @return date
+	 */
 	public function getLatestFeedDate($id)
 	{
 		$this->db->start_cache();
@@ -30,6 +44,11 @@ class Feeds extends CI_Model
 		}
 	}
 	
+	/**
+	 * Add feed item
+	 * @param integer $id
+	 * @param mixed $Item
+	 */
 	public function addItem($id, $Item)
 	{
 		$data = array(
@@ -43,6 +62,14 @@ class Feeds extends CI_Model
 		$this->db->insert('feed_items', $data);		
 	}
 	
+	/**
+	 * getItem
+	 * 
+	 * Returns the feed item by link or false
+	 * @param integer $id
+	 * @param string $link
+	 * @return mixed
+	 */
 	public function getItem($id, $link)
 	{
 		$this->db
@@ -60,7 +87,11 @@ class Feeds extends CI_Model
 		}
 	}
 	
-	
+	/**
+	 * Updates the lastBuiltDate of a given feed item
+	 * @param integer $id
+	 * @param date $date
+	 */
 	public function updateItem($id, $date)
 	{
 		$this->db->where('id', $id);
