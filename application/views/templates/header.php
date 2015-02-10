@@ -35,7 +35,6 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
              <?php
-             	array_unshift($menu, $title);
              	echo ul($menu, array("class" => "sidebar-nav"));
            	?>
         </div>
