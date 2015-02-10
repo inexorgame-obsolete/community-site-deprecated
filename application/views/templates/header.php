@@ -35,9 +35,8 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
              <?php
-           		$title = '<li class="sidebar-brand">'.$menu['title'].'</li>';
-           		$nav = ul($menu['items'], array("class" => "sidebar-nav"));
-           		echo substr_replace($nav, $title, 24, 0);
+             	array_unshift($menu, $title);
+             	echo ul($menu, array("class" => "sidebar-nav"));
            	?>
         </div>
         

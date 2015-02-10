@@ -12,6 +12,8 @@
 
 	<?php echo script_tag("asset/js/jquery-2.1.3.min.js") . PHP_EOL;?>
 	<?php echo script_tag("asset/js/bootstrap.min.js") . PHP_EOL;?>
+	<?php echo script_tag("asset/js/waypoints/jquery.waypoints.js") . PHP_EOL;?>
+	<?php echo script_tag("asset/js/waypoints/shortcuts/infinite.min.js") . PHP_EOL;?>
 	<?php echo script_tag("asset/js/tinymce/tinymce.min.js") . PHP_EOL;?>
 	
 	<script>
@@ -19,6 +21,14 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
+
+    $.ajaxSetup({
+		url: <?php echo current_url() . PHP_EOL;?>
+    });
+
+    var infinite = new Waypoint.Infinite({
+    	  element: $('.container-fluid')[0]
+   	});
     </script>
 </body>
 </html>

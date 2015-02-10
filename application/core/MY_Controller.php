@@ -67,12 +67,11 @@ class MY_Controller extends CI_Controller
 		 * (an optional view parameter can be applied)
 		 */
 		$this->menu = new stdClass();
-		$this->menu->title = $this->config->item('title');
 		
 		// This is a tiny hack to offer acces via $object->footer->item but initialize using the PHP array syntax :P
 		// When loading from the config (TODO) this should be converted (if an array) or mapped (if an object)
+		
 		$this->menu->items = (object)array(
-			"heading" => "",
 			"blog" => "/",
 			"code" => "https://github.com/inexor-game/code/",
 			"wiki" => "https://github.com/inexor-game/code/wiki"
@@ -90,15 +89,11 @@ class MY_Controller extends CI_Controller
 		/*
 		 * Proccess internal objects to be passed to our views
 		 */
-		
 		$headerData = array(
 			"title" => $this->title,
 			"lang" => $this->language,
 			"meta" => array(),
-			"menu" => array(
-				"title" => $this->menu->title,
-				"items" => menu_links((array)$this->menu->items)
-			)	
+			"menu" => menu_links((array)$this->menu->items)
 		);
 		
 		
