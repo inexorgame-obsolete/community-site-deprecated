@@ -17,7 +17,7 @@ class Cron extends CI_Controller
 	
 	public function feeds()
 	{
-		$this->load->library('RSS');
+		$this->load->library('rss');
 		$this->load->helper('security');
 		$this->load->model('cron/feeds');
 		
