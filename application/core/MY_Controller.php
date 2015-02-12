@@ -72,6 +72,7 @@ class MY_Controller extends CI_Controller
 		// When loading from the config (TODO) this should be converted (if an array) or mapped (if an object)
 		
 		$this->menu->items = (object)array(
+			"Community Site" => "",
 			"blog" => "/",
 			"code" => "https://github.com/inexor-game/code/",
 			"wiki" => "https://github.com/inexor-game/code/wiki"

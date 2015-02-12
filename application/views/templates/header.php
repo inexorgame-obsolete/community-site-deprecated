@@ -20,17 +20,6 @@
 	<![endif]-->
 </head>
 <body>
-	<!-- <div class="header-container">
-    	<header class="wrapper clearfix">
-        	<h1 class="title"></h1>
-            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-             <div class="collapse navbar-collapse">
-           	 </div>
-			</nav>
-        </header>
-        
-	</div>--> <!-- #header -->
-
 	<div id="wrapper">
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
