@@ -19,7 +19,7 @@ class Cron extends CI_Controller
 	{
 		$this->load->library('rss');
 		$this->load->helper('security');
-		$this->load->model('cron/feeds');
+		$this->load->model('cron/feed_model', 'feeds');
 		
 		foreach ($this->feeds->getFeedList() as $feed)
 		{	

@@ -1,5 +1,5 @@
 <?php
-class Feeds extends CI_Model
+class feed_model extends CI_Model
 {
 	// Load the database driver because it is necessary for all operations
 	public function __construct()
