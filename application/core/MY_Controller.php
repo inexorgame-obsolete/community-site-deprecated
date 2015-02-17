@@ -22,7 +22,7 @@ class MY_Controller extends CI_Controller
 		parent::__construct(); // Load the original controller
 		
 		//Load additional resources
-		$this->load->library(array('session', 'lang'));
+		$this->load->library(array('session', 'lang', 'ion_auth'));
 		$this->config->load('site');
 		
 		/*
