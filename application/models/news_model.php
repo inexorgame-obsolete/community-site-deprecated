@@ -1,11 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class News_Model extends CI_Model
+class news_model extends CI_Model
 {
 	// Load the database driver because it is necessary for all operations
 	public function __construct()
 	{
-		$this->load->library('database');
+		$this->load->database();
 	}
 	
 	/**
@@ -20,7 +20,8 @@ class News_Model extends CI_Model
 	
 	public function getEntries($Items)
 	{
-		$query = $this->db->get('feed_items')->where_in($Items);
+		$this->db->where_in($Items);
+		$query = $this->db->get('feed_items');
 		
 		if ($query->num_rows > 0)
 		{
@@ -57,6 +58,7 @@ class News_Model extends CI_Model
 		
 		$this->db
 		->select('id')
+		->from('feed_items')
 		->where('pubDate >=', $startDate->format("Y-m-d H:i:s"))
 		->where('pubDate <=', $endDate->format("Y-m-d H:i:s"));
 		
