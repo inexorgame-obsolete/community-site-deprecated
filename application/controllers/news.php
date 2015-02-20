@@ -1,16 +1,32 @@
+
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class News extends MY_Controller {
+class News extends CI_Controller {
+
+	/**
+	 * Magic Method __construct
+	 */
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->library('template');
+		$this->template->add_css($this);
+	}
+
 	public function index()
 	{
-		$this->load->model('news_model', 'news');
+		$this->load->model('feed_items_model');
 		
 		$startDate = new DateTime();
-		$endDate = $startDate->modify("-6 weeks");
-		$ids = $this->news->getEntriesInRange($startDate, $endDate);
+		$endDate = new DateTime();
+		$endDate->modify("-6 weeks");
+
+		$ids = $this->feed_items_model->getEntriesInRange($startDate, $endDate);
 		// TODO: No filters implemented yet, gotta do that once the login system is rolled.
-		
-		$this->display('news', array("Items" => $this->news->getEntries($ids)));
+
+		$ids = array_map(function($a) { return $a->id; }, $ids);
+
+		$this->load->view('news/index', array("items" => $this->feed_items_model->getEntries($ids)));
 	}
 	
 }

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCtype html>
 <html lang="en">
 <head>
 <title>404 Page Not Found</title>

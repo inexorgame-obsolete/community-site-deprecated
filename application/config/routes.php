@@ -5,7 +5,7 @@
 | -------------------------------------------------------------------------
 | This file lets you re-map URI requests to specific controller functions.
 |
-| Typically there is a one-to-one relationship between a URL string
+| typically there is a one-to-one relationship between a URL string
 | and its corresponding controller class/method. The segments in a
 | URL normally follow this pattern:
 |
@@ -38,9 +38,18 @@
 |
 */
 
-$route['default_controller'] = "news";
-$route['404_override'] = '';
+$route['auth/(:any)'] = 'auth/$1';
+$route['auth'] = 'auth';
 
+$route['uer/(:any)'] = 'user/$1';
+$route['user'] = 'user';
+
+
+$route['(:any)/(:any)'] = '$1/$2';
+$route['(:any)'] = '$1';
+
+$route['(:num)'] = 'pages/view/$1';
+$route['default_controller'] = "news";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

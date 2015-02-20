@@ -1,10 +1,11 @@
 <?php
-class Feeds extends CI_Model
+class Feeds extends MY_Model
 {
 	// Load the database driver because it is necessary for all operations
 	public function __construct()
 	{
-		$this->load->database();
+		parent::__construct();
+		$this->load_config('feed_items');
 	}
 	
 	/**
@@ -29,7 +30,7 @@ class Feeds extends CI_Model
 	public function getLatestFeedDate($id)
 	{
 		$this->db->start_cache();
-		$this->db->select_max('pubDate')->from('feed_items');
+		$this->db->select_max('pubDate')->from($this->Table);
 		$this->db->stop_cache();
 		// Make above a prepared statement
 		$this->db->where('feed_id', $id);
@@ -59,7 +60,7 @@ class Feeds extends CI_Model
 				'description' => $Item['description']
 		);
 		
-		$this->db->insert('feed_items', $data);		
+		$this->db->insert($this->Table, $data);		
 	}
 	
 	/**
@@ -74,7 +75,7 @@ class Feeds extends CI_Model
 	{
 		$this->db
 		->select('id')
-		->from('feed_items')
+		->from($this->Table)
 		->where(array('feed_id' => $id, 'link' => $link));
 		
 		$query = $this->db->get();
@@ -95,6 +96,6 @@ class Feeds extends CI_Model
 	public function updateItem($id, $date)
 	{
 		$this->db->where('id', $id);
-		$this->db->update('feed_items', array('lastBuiltDate' => $date));
+		$this->db->update($this->Table, array('lastBuiltDate' => $date));
 	}
 }

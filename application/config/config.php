@@ -5,7 +5,7 @@
 | Base Site URL
 |--------------------------------------------------------------------------
 |
-| URL to your CodeIgniter root. Typically this will be your base URL,
+| URL to your CodeIgniter root. typeically this will be your base URL,
 | WITH a trailing slash:
 |
 |	http://example.com/
@@ -21,12 +21,12 @@ $config['base_url']	= '';
 | Index File
 |--------------------------------------------------------------------------
 |
-| Typically this will be your index.php file, unless you've renamed it to
+| typeically this will be your index.php file, unless you've renamed it to
 | something else. If you are using mod_rewrite to remove the page set this
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -91,7 +91,7 @@ $config['charset'] = 'UTF-8';
 | setting this variable to TRUE (boolean).  See the user guide for details.
 |
 */
-$config['enable_hooks'] = FALSE;
+$config['enable_hooks'] = TRUE;
 
 
 /*
@@ -224,7 +224,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'IN9Yp38zPXzdSI3dPsjspoabKWuY9dZpxZgbAVmvBdtCbgT8ZLTqxJJieSZGt2V6H1uor2RHCTpgpEKBOQTvPDR34qG6v8VuntOhTKcV37dCbOV8gu8nMod7UuYSPq2fYan8tAgS0AEtuMUtF95WERRODW4RhpCIIYCU12fK0Q3y4tpZvdrBrpzjJOXnUYAP8mlhTzWu5yXvXozLHKvmujE33o5qguxQ6yS72Z8fWnVhDYZ8iyF3qcVjsKiQ6bTD20d15ajfLcpRSO6vr3bHNZTs3uuuv3pSudTQtBf0X0MW';
 
 /*
 |--------------------------------------------------------------------------
@@ -232,27 +232,27 @@ $config['encryption_key'] = '';
 |--------------------------------------------------------------------------
 |
 | 'sess_cookie_name'		= the name you want for the cookie
-| 'sess_expiration'			= the number of SECONDS you want the session to last.
+| 'sess_expiration'			= Deprecated scince CI3. the number of SECONDS you want the session to last.
 |   by default sessions last 7200 seconds (two hours).  Set to zero for no expiration.
 | 'sess_expire_on_close'	= Whether to cause the session to expire automatically
 |   when the browser window is closed
-| 'sess_encrypt_cookie'		= Whether to encrypt the cookie
+| 'sess_encrypt_cookie'		= Removed in CI3. Whether to encrypt the cookie
 | 'sess_use_database'		= Whether to save the session data to a database
 | 'sess_table_name'			= The name of the session database table
 | 'sess_match_ip'			= Whether to match the user's IP address when reading the session data
-| 'sess_match_useragent'	= Whether to match the User Agent when reading the session data
+| 'sess_match_useragent'	= Removed in CI3. Whether to match the User Agent when reading the session data
 | 'sess_time_to_update'		= how many seconds between CI refreshing Session Information
+| 'sess_driver'             = New in CI3. CI3 does not save session data in cookies anymore.
+|                             Possibilities: 'database' or 'files'
 |
 */
 $config['sess_cookie_name']		= 'ci_session';
-$config['sess_expiration']		= 7200;
 $config['sess_expire_on_close']	= FALSE;
-$config['sess_encrypt_cookie']	= FALSE;
-$config['sess_use_database']	= FALSE;
+$config['sess_use_database']	= TRUE;
 $config['sess_table_name']		= 'ci_sessions';
 $config['sess_match_ip']		= FALSE;
-$config['sess_match_useragent']	= TRUE;
 $config['sess_time_to_update']	= 300;
+$config['sess_driver']          = 'database';
 
 /*
 |--------------------------------------------------------------------------
@@ -261,7 +261,7 @@ $config['sess_time_to_update']	= 300;
 |
 | 'cookie_prefix' = Set a prefix if you need to avoid collisions
 | 'cookie_domain' = Set to .your-domain.com for site-wide cookies
-| 'cookie_path'   =  Typically will be a forward slash
+| 'cookie_path'   =  typeically will be a forward slash
 | 'cookie_secure' =  Cookies will only be set if a secure HTTPS connection exists.
 |
 */

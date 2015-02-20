@@ -1,0 +1,58 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+
+// Structured as following: filetype => array(magicnumber1, magicnumber2 => [offset in bytes | optional]);
+// or filetype => magicnumber
+$config['magicnumbers'] = array(
+	'hqx'	=> '28546869732066696C65206D75737420626520636F6E76657274656420776974682042696E48657820',
+	'cpt'	=> array('4350543746494C45', '43505446494C45'),
+	'bin'	=> array('CEFAEDFE', 'CFFAEDFE', 'FEEDFACE', 'FEEDFACF'),
+	'dms'	=> '444D5321',
+	'lha'	=> array('2D6C68' => 2),
+	'lzh'	=> array('2D6C68' => 2),
+	'exe'	=> '4D5A',
+	'class'	=> 'CAFEBABE',
+	'psd'	=> '38425053',
+	'sea'	=> '00',
+	'dll'	=> '4D5A',
+	'pdf'	=> '25504446',
+	'eps'	=> array('C5D0D3C6', '252150532D41646F62652D332E3020455053462D332030'),
+	'mif'	=> array('3C4D616B657246696C6520', '56657273696F6E20'),
+	'xls'	=> array('0908100000060500' => 512, 'D0CF11E0A1B11AE1', 'FDFFFFFFnn00' => 512, 'FDFFFFFFnn02' => 512, 'FDFFFFFF20000000' => 512),
+	'ppt'	=> array('006E1EF0' => 512, '0F00E803' => 512, 'A0461DF0' => 512, 'D0CF11E0A1B11AE1', 'FDFFFFFFnnnn0000' => 512),
+	'gz'	=> '1F8B08',
+	'swf'	=> array('435753', '465753', '5A5753'),
+	'sit'	=> array('5349542100', '5374756666497420286329313939372D'),
+	'tar'	=> array('1F9D', '1FA0', '425A68', '7573746172' => 257),
+	'tgz'	=> '1F8B08',
+	'zip'	=> array('504B0304', '504B030414000100630000000000', '504B0506', '504B0508', '504B4C495445' => 30, '504B537058' => 526),
+	'mid'	=> '4D546864',
+	'midi'	=> '4D546864',
+	'mp3'	=> array('494433', 'FFF', 'FFE'),
+	'aif'	=> '464F524D00',
+	'aiff'	=> '464F524D00',
+	'ram'	=> '727473703A2F2F',
+	'rm'	=> '2E524D46',
+	'rpm'	=> 'EDABEEDB',
+	'ra'	=> array('2E524D460000001200', '2E7261FD00'),
+	'wav'	=> '52494646xxxxxxxx57415645666D7420',
+	'bmp'	=> '424D',
+	'gif'	=> array('474946383761', '474946383961'),
+	'jpeg'	=> 'FFD8FF',
+	'jpg'	=> 'FFD8FF',
+	'jpe'	=> 'FFD8FF',
+	'png'	=> '89504E470D0A1A0A',
+	'tiff'	=> array('492049', '49492A00', '4D4D002A', '4D4D002B'),
+	'tif'	=> array('492049', '49492A00', '4D4D002A', '4D4D002B'),
+	'mpeg'	=> array('FFFx', '000001Bx'),
+	'mpg'	=> array('FFFx', '000001Bx', '000001BA'),
+	'mov'	=> array('6674797071742020' => 4),
+	'avi'	=> '52494646xxxxxxxx415649204C495354',
+	'doc'	=> array('0D444F43', 'CF11E0A1B11AE100', 'D0CF11E0A1B11AE1', 'DBA52D00', 'ECA5C100' => 512),
+	'docx'	=> '504B030414000600',
+	'xlsx'	=> '504B030414000600',
+	'pptx'	=> '504B030414000600',
+	'eml'	=> array('46726F6D202020', '46726F6D203F3F3F', '46726F6D3A20', '52657475726E2D506174683A20', '582D')
+	);
+// $magicnumbers['zip']['57696E5A6970'] = 29152; // WinZip Compressed archive; 30KB offset; rare usage of this signature
+// $magicnumbers['mov'][] = '00'; // Mov file signature
