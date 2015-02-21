@@ -1,0 +1,9 @@
+[submodule "system"]
+	path = system
+	url = https://github.com/inexor-game/codeigniter-system
+[submodule "application/libraries"]
+	path = application/libraries
+	url = https://github.com/inexor-game/codeigniter-libraries
+[submodule "application/models/shared"]
+	path = application/models/shared
+	url = https://github.com/inexor-game/codeigniter-shared-models
