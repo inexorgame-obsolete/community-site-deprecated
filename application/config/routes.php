@@ -41,7 +41,7 @@
 $route['auth/(:any)'] = 'auth/$1';
 $route['auth'] = 'auth';
 
-$route['uer/(:any)'] = 'user/$1';
+$route['user/(:any)'] = 'user/$1';
 $route['user'] = 'user';
 
 
