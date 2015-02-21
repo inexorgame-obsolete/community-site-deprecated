@@ -1,0 +1,126 @@
+header {
+	width: 100%;
+	position: relative;
+	-webkit-transition: margin-top .5s;
+	-moz-transition: margin-top .5s;
+	-o-transition: margin-top .5s;
+	transition: margin-top .5s;
+}
+.docked {
+	position: fixed;
+}
+.menu {
+	/*height: 70px;*/
+	position: relative;
+}
+/* Main Menu */
+#main-menu {
+	float: left;
+	display: inline-block;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	/*height: 70px;*/
+}
+#main-menu li {
+	width: auto;
+	display: inline-block;
+}
+#main-menu li a {
+	font-weight: inherit;
+}
+#main-menu > li {
+	/*height: 70px;*/
+	line-height: 70px;
+	font-size: 24px;
+	padding: 0 10px;
+}
+.navigation {
+	position: relative;
+	display: inline-block;
+	height: 100%;
+}
+header .user-login-field {
+	padding-bottom: 3px;
+}
+header .login-link {
+	display: none;
+}
+.user-login {
+	float: right;
+}
+header .helper {
+	float: left;
+	height: 70px;
+}
+header .border {
+	position: relative;
+	padding: 15px 30px;
+}
+header img {
+	height: 100%;
+	position: relative;
+}
+header .title {
+	bottom: 15px;
+	margin-left: 10px;
+	border-left: 1px solid #CCC;
+	position: relative;
+	display: inline-block;
+	font-size: 24px;
+	line-height: 40px;
+	overflow: hidden;
+	max-width: 0px;
+	-webkit-transition: max-width .5s;
+	-o-transition: max-width .5s;
+	transition: max-width .5s;
+	-webkit-transition-timing-function: linear;
+    transition-timing-function: linear;
+}
+.helper:hover .title {
+	max-width: 200px;
+	border-right: 1px solid #CCC;
+}
+
+header.docked {
+	z-index: 999;
+	background-color: #FFF;
+	box-shadow: 0 0 30px #CCC;
+}
+header.docked .helper {
+	height: 35px;
+}
+header.docked .helper img {
+	height: 100%;
+	border-right: 1px solid #CCC;
+	padding-right: 10px;
+}
+header.docked .title {
+	display: none;
+}
+header.docked #main-menu > li {
+	line-height: 30px;
+}
+header.docked .avatar {
+	margin-top: -7px;
+	margin-bottom: -6px;
+}
+header.docked .border {
+	padding-top: 10px;
+	padding-bottom: 4px;
+}
+header.docked .login-field {
+	display: none;
+}
+header.docked .login-link {
+	display: inline-block;
+}
+header.docked .login-link a {
+	line-height: 30px;
+	font-size: 24px;
+	display: inline-block;
+	font-weight: 100;
+}
+header .closer, header .opener {
+	display: none;
+}

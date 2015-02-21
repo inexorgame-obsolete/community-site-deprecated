@@ -1,0 +1,95 @@
+#main-menu {
+	float: none;
+	display: block;
+	width: 100%;
+}
+#main-menu > li, #main-menu > li > a, header.docked #main-menu > li {
+	display: block;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	line-height: 70px;
+	text-align: center;
+}
+header .closer, header .opener {
+	display: block;
+}
+header .border, header.docked .border {
+	margin: 0;
+	padding: 0;
+}
+header .navigation {
+	width: 100%;
+}
+header .helper {
+	background-color: #E6E6E6;
+	margin: auto;
+	float: none;
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	box-shadow: 0 0 20px rgba(0,0,0,.5);
+	text-align: center;
+	display: block;
+}
+header .helper .title {
+	display: inline-block;
+	width: auto;
+	max-width: none;
+	border-right: none;
+}
+header.docked .title {
+	border-left: none;
+	margin: 0;
+	bottom: 0;
+}
+header .helper:hover .title {
+	border-right: none;
+}
+#change_background_picture {
+	margin-top: 0;
+	border: 1px solid #CCC;
+	border-radius: 3px;
+	margin-left: 10px;
+}
+#change_background_picture input {
+	display: block;
+	width: 100%;
+	margin-bottom: 10px;
+}
+footer > .content > section {
+	width: 100%;
+}
+header .user-login {
+	float: none;
+}
+header .login-link, header .login-link a, header.docked .login-link, header.docked .login-link a {
+	line-height: 70px;
+	display: block;
+	text-align: center;
+}
+header .user-showcase, header .user-showcase a {
+	height: 70px;
+	display: block;
+	float: none;
+	text-align: center;
+}
+header .user-showcase .avatar {
+	margin: 10px 0;
+}
+#top-main-menu .closer, #top-main-menu .opener {
+	height: 70px;
+	font-size: 24px;
+	line-height: 70px;
+	display: block;
+	text-align: center;
+}
+#top-main-menu .menu, #top-main-menu .closer {
+	display: none;
+}
+#top-main-menu:target .menu, #top-main-menu:target .closer {
+	display: block;
+} 
+#top-main-menu:target .opener {
+	display: none;
+}

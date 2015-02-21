@@ -1,0 +1,89 @@
+#irc-log {
+	margin-right: 250px;
+	display: block;
+	border-collapse: collapse;
+}
+#irc-log td {
+	padding: 10px;
+	position: relative;
+}
+#tbl-time {
+	width: 12.5%;
+}
+#tbl-msg {
+	width: 87.5%;
+}
+#irc-log thead {
+	background-color: #333;
+	font-weight: bold;
+	color: #FFF;
+}
+#irc-log td:first-child {
+	border-right: 1px solid #333;
+	text-align: right;
+}
+#irc-log tbody tr:nth-child(even).user_renaming {
+	background-color: #E6EFEF;
+}
+#irc-log tbody tr:nth-child(odd).user_renaming {
+	background-color: #BBCCCC;
+}
+#irc-log tbody tr:nth-child(even).user_message {
+	background-color: #EFEFEF;
+}
+#irc-log tbody tr:nth-child(odd).user_message {
+	background-color: #CCC;
+}
+#irc-log tbody tr:nth-child(even).user_connection {
+	background-color: #DDDDB6;
+}
+#irc-log tbody tr:nth-child(odd).user_connection {
+	background-color: #CCCCB6;
+}
+#irc-log tbody tr:hover span {
+	color: inherit !important;
+	background-color: none !important;
+}
+.centered {
+	max-width: 1210px;
+}
+#log {
+	background-color: #333;
+}
+#user-list {
+	width: 250px;
+	float: right;
+	color: #FFF;
+	overflow-y: auto;
+}
+#user-list .headline {
+	display: block;
+	padding: 10px;
+	font-weight: bold;
+}
+#user-list ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#user-list li {
+	display: block;
+	padding: 10px;
+}
+#user-list .title {
+	font-size: 12px;
+}
+#irc_selected_triangle, #irc_selected_triangle span {
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	right: 0;
+}
+#irc_selected_triangle span {
+	margin-top: -15px;
+	height: 0;
+	width: 0;
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-right: 15px solid #333;
+}

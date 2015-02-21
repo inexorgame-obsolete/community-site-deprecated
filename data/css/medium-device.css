@@ -1,0 +1,22 @@
+#user-info .user-edit-item label, #user-info .user-edit-item input, #user-info .user-edit-item textarea {
+	float: none;
+	display: block;
+}
+footer > .content > section {
+	width: 50%;
+}
+.login-field {
+	display: none;
+}
+header .login-link {
+	display: inline-block;
+}
+header .login-link a {
+	line-height: 70px;
+	font-size: 24px;
+	display: inline-block;
+	font-weight: 100;
+}
+header.docked .login-link a {
+	line-height: 30px;
+}

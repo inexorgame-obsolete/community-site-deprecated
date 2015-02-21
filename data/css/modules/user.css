@@ -1,0 +1,127 @@
+
+/* user profile */
+#profile_picture {
+	float: left;
+	display: inline-block;
+	margin-top: -130px;
+	border: 1px solid #CCC;
+	width: 203px;
+	height: 203px;
+	padding: 5px;
+	border-radius: 5px;
+	background: #FFF;
+}
+#profile_picture .picture {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: 100%; /* fallback */
+	background-size: cover;
+	border-radius: 3px;
+}
+#user-info {
+	display: inline-block;
+	float: left;
+	margin-left: 20px;
+	margin-top: -125px;
+	max-width: 655px;
+}
+#user-info h1 {
+	margin-bottom: 55px;
+}
+
+/* edit user styles */
+#change_profile_picture {
+	padding: 10px 5px 5px 5px;
+	border-radius: 0 0 5px 5px;
+	width: 203px;
+	border: 1px solid #CCC;
+	border-top: none;
+}
+#change_profile_picture form, #change_profile_picture input {
+	position: relative;
+	width: 100%;
+	display: block;
+}
+#change_profile_picture input[type="file"] {
+	display: block;
+	margin: 5px 0;
+	padding: 0;
+}
+#change_profile_picture input[type="submit"] {
+	margin: 0;
+}
+#change_profile_picture input[name="delete"] {
+	margin-top: 5px;
+}
+#change_background_picture {
+	padding: 10px 5px 5px 5px;
+	border-left: none;
+	background-color: rgba(255, 255, 255, .8);
+	position: absolute;
+	margin-top: -230px;
+	border-radius: 5px;
+	left: 215px;
+}
+#change_background_picture input {
+	margin: 0;
+}
+#change_background_picture input[type=file] {
+	width: 260px;
+}
+#change_background_picture input[name="submit"] {
+	border-radius: 2px 0 0 2px;
+}
+#change_background_picture input[name="delete"] {
+	margin-left: -1px;
+	border-radius: 0 2px 2px 0;
+}
+
+.user-edit-item {
+	position: relative;
+}
+.user-edit-item label {
+	top: 0px;
+	position: relative;
+	width: 160px;
+	display: inline-block;
+	padding-right: 5px;
+}
+.user-edit-item.about label {
+	float: left;
+	margin-right: 4px;
+	font-style: normal;
+}
+.user-edit-item.about textarea {
+	float: left;
+}
+
+/* user list & search */
+.user-list-container {
+	border: 1px solid #CCC;
+	border-radius: 5px;
+}
+.user-list-container.intransparent {
+	background-color: #FFF;
+}
+.user-list-container .avatar {
+	margin: 12px 12px 0 12px;
+	float: left;
+}
+.user-list-container .user-section {
+	display: block;
+	border-bottom: 1px solid #CCC;
+	height: 74px;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center center;
+}
+.user-list-container:last-child {
+	border-bottom: none;
+}
+.user-list-container h3 {
+	display: inline-block;
+	float: left;
+}

@@ -1,0 +1,9 @@
+
+header .user-login-field {
+	display: inline-block;
+}
+header .user-login-submit {
+	float: none;
+	text-align: right;
+	display: block;
+}

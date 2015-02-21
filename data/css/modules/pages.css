@@ -1,0 +1,103 @@
+
+.video-coverage {
+	width: 100%;
+	height: 540px;
+	background: #000;
+	text-align: center;
+	background-position: center center;
+	background-repeat: no-repeat;
+	box-shadow: 0 0 10px #000;
+}
+.video-particles {
+	/*background-image: url(../../images/particles-coverage.png);*/
+}
+.video {
+	margin: auto;
+	width: 900px;
+}
+/* full-site-tabs */
+.full-site-tabs {
+	width: 100%;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+.full-site-tabs > li {
+	display: inline-block;
+}
+.full-site-tabs > li > a {
+	display: inline-block;
+	padding: 10px;
+	border: 1px solid #CCC;
+	border-bottom: none;
+	margin-left: -1px;
+}
+/* download-game */
+.download-game {
+	background-image: url(../../images/download/xenon-without-rock.png);
+	background-position: center 0;
+	background-size: cover;
+	box-shadow: 0 0 10px #000;
+	width: 100%;
+	height: 680px;
+	background-color: #000;
+	position: relative;
+	overflow: hidden;
+}
+.download-game-inner {
+	position: relative;
+	background-image: url(../../images/download/siderock.png);
+	background-position: center center;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	height: 150%;
+	width: 100%;
+	margin: auto;
+}
+.download-game-inner .content {
+	width: 600px;
+	padding-top: 70px;
+	margin: auto;
+}
+.download-game-inner > .content > h2 {
+	font-size: 45px;
+	color: rgba(200, 200, 200, .5);
+}
+.download-game-inner > .content > p {
+	background-color: rgba(255, 255, 255, .5);
+	padding: 15px;
+	margin: 0 -15px;
+	width: 500px;
+}
+.download-game-inner .downloads {
+	overflow: hidden;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	margin-top: 10px;
+	border: 3px solid #666;
+	background-color: rgba(255, 255, 255, .7);
+	width: 500px;
+	border-radius: 10px;
+}
+.download-game-inner .downloads > li {
+	display: block;
+	margin-top: -1px;
+}
+.download-game-inner .downloads > li > a {
+	border-top: 1px solid #999;
+	display: block;
+	height: 50px;
+	line-height: 50px;
+	padding-left: 50px;
+}
+.icon-windows, .icon-mac, .icon-linux, .icon-github {
+	background-size: 32px 32px;
+	background-position: 9px 9px;
+	background-repeat: no-repeat;
+}
+.icon-windows 	{ 	background-image: url(../../images/icons/windows.png);	}
+.icon-mac 		{	background-image: url(../../images/icons/mac.png); 	}
+.icon-linux 	{	background-image: url(../../images/icons/linux.png); 	}
+.icon-github 	{	background-image: url(../../images/icons/github.png); 	}

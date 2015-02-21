@@ -1,0 +1,99 @@
+
+/* shoutbox */
+#shoutbox {
+	border: 1px solid #CCC;
+	border-radius: 5px;
+}
+.shout .avatar-container {
+	top: 13px;
+	left: 13px;
+	position: absolute;
+}
+.shout.self .avatar-container {
+	right: 13px;
+	left: auto;
+}
+#shoutbox .info {
+	border-bottom: 3px solid #CCC;
+	position: relative;
+}
+#shoutbox .info .container {
+	margin-left: 76px;
+	min-height: 76px;
+}
+#shoutbox .info .avatar-container {
+	position: absolute;
+	top: 13px;
+	left: 13px;
+}
+#shoutbox .description {
+	display: inline-block;
+	border-left: 1px solid #CCC;
+	padding: 0 15px;
+	font-style: italic;
+	margin: 25px 0;
+}
+.shout {
+	background-color: #EFEFEF;
+	border-bottom: 1px solid #CCC;
+	position: relative;
+	height: 100%;
+}
+.shout .container {
+	margin-left: 77px;
+	max-width: 790px;
+	padding: 15px;
+	background-color: #FFF;
+	border-left: 1px solid #CCC;
+}
+.shout p {
+	width: 100%;
+	min-height: 56px;
+	margin: 0;
+}
+.shout .speech-bubble {
+	background-position: center 31px;
+	right: 100%;
+}
+.shout .speech-bubble.left {
+	left: 100%;
+	right: auto;
+}
+.shout.self .container {
+	margin-left: 0;
+	margin-right: 77px;
+	border-left: none;
+	border-right: 1px solid #CCC;
+}
+.shout textarea {
+	resize: vertical;
+	margin: -15px -15px 0px -15px;
+	border: none;
+	padding: inherit;
+	display: block;
+	width: 100%;
+	height: 100px;
+}
+.shout .submit-shout {
+	margin-top: 15px;
+	width: 100%;
+}
+
+/* Speech bubble */
+.speech-bubble {
+	width: 7px;
+	height: 100%;
+	position: absolute;
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-position: right center;
+	top: 0;
+}
+.speech-bubble.right {
+	right: -1px;
+	background-image: url(../images/speech-bubble-right.png);
+}
+.speech-bubble.left {
+	left: -1px;
+	background-image: url(../images/speech-bubble-left.png);
+}

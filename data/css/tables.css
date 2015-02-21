@@ -1,0 +1,112 @@
+
+table.settings {
+	width: 100%;
+}
+table.settings, table.settings tr, table.settings td {
+	border: none;
+	border-spacing: 0;
+	border-collapse: separate;
+}
+table.settings tr td:first-child {
+	width: 30%;
+}
+table.settings td {
+	padding: 10px;
+}
+table.settings tr:nth-child(even){
+	background-color: #EFEFEF;
+}
+table.info {
+	border-collapse: collapse;
+	width: 100%;
+}
+table.info td:first-child {
+	width: 20%;
+}
+table.info thead td {
+	font-weight: bold;
+	font-style: italic;
+	background-color: #666;
+	color: #FFF;
+}
+table.info td {
+	position: relative;
+	padding: 10px;
+}
+table.info td a {
+	display: block;
+	margin: -10px;
+	padding: 10px;
+	font-weight: normal;
+	cursor: pointer;
+}
+table.info tr:nth-child(even) {
+	background-color: #DFDFDF;
+}
+table.info tr:nth-child(odd) {
+	background-color: #EFEFEF;
+}
+table.info tr.linked:hover {
+	background-color: #CCC;
+}
+table.info tr.no-results {
+	text-align: center;
+}
+table.vertical-editable {
+	margin: 0 auto;
+}
+table.vertical-editable, table.vertical-editable table {
+	border-collapse: collapse;
+	background-color: #333;
+	color: #FFF;
+}
+table.vertical-editable table {
+	height: 100%;
+	width: 100%;
+}
+table.vertical-editable td.name {
+	background-color: #666;
+	font-style: italic;
+	font-weight: bold;
+}
+table.vertical-editable table td.name {
+	position: relative;
+	max-width: 400px;
+}
+table.vertical-editable td.name a {
+	display: block;
+	padding: 10px 20px;
+}
+table.vertical-editable td.description,
+table.vertical-editable td.permissions {
+	padding: 10px 20px;
+	min-width: 200px;
+	max-width: 400px;
+}
+table.vertical-editable td.contains-table {
+	position: relative;
+}
+table.vertical-editable table td.contains-table {
+	padding: 0px;
+}
+table.vertical-editable table tr:nth-child(3) {
+	border-bottom: 10px solid #333;
+}
+table.vertical-editable table tr:last-child {
+	border-bottom: none;
+}
+table.vertical-editable td {
+	vertical-align: top;
+	position: relative;
+	padding: 0;
+}
+table.vertical-editable td.name, table td.description {
+	border-right: 2px solid #CCC;
+}
+table.vertical-editable td.name.no-childs, table td.description.no-childs {
+	border-right: none;
+}
+table.vertical-editable td .small-triangle.right {
+	right: auto;
+	left: -2px;
+}

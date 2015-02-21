@@ -1,0 +1,80 @@
+
+/* browse-data-window */
+#browse-data {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	z-index: 99999; /* tinymce's dialog z-index is 65537*/
+}
+.browse-data.close.background {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 1;
+}
+.browse-data.window {
+	box-shadow: 0 0 20px rgba(0, 0, 0, .4);
+	margin: 100px auto;
+	width: 100%;
+	position: relative;
+	z-index: 2;
+	max-width: 960px;
+	background-color: #FFF;
+}
+.browse-data.window-title {
+	padding: 20px;
+	border-bottom: 1px solid #CCC;
+	margin: 0;
+}
+.browse-data.window-title .close {
+	float: right;
+	cursor: pointer;
+}
+.browse-data.item {
+	padding: 10px 20px;
+	cursor: pointer;
+	border-bottom: 1px solid #EFEFEF;
+}
+.browse-data.item .description {
+	float: right;
+}
+.browse-data.item.disabled.file {
+	background-color: #EFEFEF !important;
+	cursor: inherit !important;
+}
+.browse-data.item.disabled.dir {
+	background-color: #EFEFEF;
+}
+.browse-data.item:hover, .browse-data.item.disabled.dir:hover {
+	background-color: #DFDFDF;
+}
+.browse-data.edit {
+	padding: 20px 20px 0 20px;
+}
+.browse-data.edit > div {
+	display: inline-block;
+	padding-bottom: 20px;
+}
+.browse-data.upload-input {
+	width: 250px;
+	margin-left: 0;
+	padding-left: 0;
+}
+.browse-data.create-dir-input {
+	margin: 0;
+	height: 37px;
+	line-height: 37px;
+	padding: 0;
+}
+.browse-data.create-dir-submit {
+	margin-left: 0;
+	border-radius-top-left: 0;
+	border-radius-bottom-left: 0;
+	border-left: none;
+}
+.browse-data.upload, .browse-data.create-dir {
+	border-right: 1px solid #EFEFEF;
+	margin-right: 20px;
+	padding-right: 20px;
+}

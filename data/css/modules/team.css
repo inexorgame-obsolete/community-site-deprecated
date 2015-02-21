@@ -1,0 +1,61 @@
+/* User Spotlight */
+.dev-spotlight {
+	overflow: hidden;
+	display: block;
+	border: 1px solid #CCC;
+	border-radius: 5px;
+	position: relative;
+	margin-bottom: 10px;
+}
+.dev-spotlight .avatar {
+	position: absolute;
+}
+.dev-spotlight .user {
+	padding-left: 60px;
+	height: 50px;
+	max-width: 200px;
+	overflow: hidden;
+	display: inline-block;
+	text-overflow: ellipsis;
+}
+.dev-spotlight {
+	text-align: center;
+}
+.dev-spotlight .center {
+	margin-bottom: -61px;
+	max-width: 500px;
+	display: inline-block;
+	border: 1px solid #CCC;
+	border-top: none;
+	background-color: #EFEFEF;
+	padding: 10px 10px 0 10px;
+	line-height: 22px;
+}
+.dev-info {
+	border-bottom: 1px solid #CCC;
+}
+.dev-info > span {
+	margin-left: 50%;
+	width: 50%;
+	margin-top: -70px;
+	height: 60px;
+	line-height: 60px;
+	float: left;
+	display: inline-block;
+}
+.dev-info > span:first-child {
+	margin-left: 0;
+}
+.working-on, .work-finished {
+	text-align: left;
+	vertical-align: top;
+	width: 50%;
+	display: inline-block;
+	margin-right: -1px;
+}
+.working-on {
+	border-right: 1px solid #CCC;
+}
+.work-finished {
+	border-left: 1px solid #CCC;
+}
