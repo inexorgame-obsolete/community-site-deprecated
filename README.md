@@ -1,5 +1,5 @@
 # Community site
-Inexor's community site built upon [CodeIgniter 2x](http://www.codeigniter.com/user_guide/) series.
+Inexor's community site built upon [CodeIgniter 3x](http://www.codeigniter.com/userguide3/) series.
 
 ## Features planned
 The site is going to be structured as a simple infinite-scrolling-based page offering *"streams"* with different tabs of content.
