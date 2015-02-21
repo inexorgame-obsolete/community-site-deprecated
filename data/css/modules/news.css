@@ -1,0 +1,36 @@
+.news-feed, .news-feed > li {
+	width: auto;
+	height: auto;
+	list-style: none;
+	padding: 0;
+}
+.news-feed {
+	margin-top: 1px;
+}
+.news-feed a {
+	margin: -1px -11px 0 -11px;
+	padding: 10px;
+	border: 1px solid #CCC;
+	display: block;
+}
+.news-feed .date {
+	font-weight: 100;
+	font-size: .8em;
+	vertical-align: top;
+	float: right;
+}
+.news-feed .description {
+	overflow: hidden;
+	transition: .25s margin;
+	display: block;
+	height: 0;
+	opacity: 0;
+	font-weight: 100;
+	margin: 0px -10px 0 10px;
+}
+.news-feed a:hover .description {
+	height: 100%;
+	opacity: 1;
+	padding-top: 5px;
+	margin: 0;
+}
